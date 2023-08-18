@@ -6,6 +6,19 @@
 return {
   -- first key is the mode
   n = {
+    -- resize
+    ["<A-l>"] = { ":vertical resize +2<CR>" },
+    ["<A-h>"] = { ":vertical resize -2<CR>" },
+    ["<A-j>"] = { ":resize -2<CR>" },
+    ["<A-k>"] = { ":resize +2<CR>" },
+    ["<A-=>"] = { "<C-w>=", desc = "Resize equal" },
+    -- split
+    ["<A-v>"] = { "<C-w>v", desc = "Split window vertically" },
+    ["<A-s>"] = { "<C-w>s", desc = "Split window horizontally" },
+    -- terminal
+    ["<A-i>"] = { "<cmd>ToggleTerm direction=float<cr>", desc = "Toggle floating terminal" },
+    ["<A-H>"] = { "<cmd>ToggleTerm size=10 direction=horizontal<cr>", desc = "Toggle horizontal terminal" },
+    ["<A-V>"] = { "<cmd>ToggleTerm size=80 direction=vertical<cr>", desc = "Toggle vertical terminal" },
     -- second key is the lefthand side of the map
 
     -- navigate buffer tabs with `H` and `L`
@@ -34,6 +47,9 @@ return {
     -- ["<C-s>"] = { ":w!<cr>", desc = "Save File" },  -- change description but the same command
   },
   t = {
+    ["<A-i>"] = { "<cmd>ToggleTerm direction=float<cr>", desc = "toggle floating terminal" },
+    ["<A-H>"] = { "<cmd>ToggleTerm size=10 direction=horizontal<cr>", desc = "toggle horizontal terminal" },
+    ["<A-V>"] = { "<cmd>ToggleTerm size=80 direction=vertical<cr>", desc = "toggle vertical terminal" },
     -- setting a mapping to false will disable it
     -- ["<esc>"] = false,
   },
