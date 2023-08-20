@@ -19,6 +19,9 @@ return {
     ["<A-i>"] = { "<cmd>ToggleTerm direction=float<cr>", desc = "Toggle floating terminal" },
     ["<A-H>"] = { "<cmd>ToggleTerm size=10 direction=horizontal<cr>", desc = "Toggle horizontal terminal" },
     ["<A-V>"] = { "<cmd>ToggleTerm size=80 direction=vertical<cr>", desc = "Toggle vertical terminal" },
+    -- quickhl
+    ["<Space>m"] = { "<Plug>(quickhl-manual-this)" },
+    ["<Space>M"] = { "<Plug>(quickhl-manual-reset)" },
     -- second key is the lefthand side of the map
 
     -- navigate buffer tabs with `H` and `L`
@@ -52,5 +55,10 @@ return {
     ["<A-V>"] = { "<cmd>ToggleTerm size=80 direction=vertical<cr>", desc = "toggle vertical terminal" },
     -- setting a mapping to false will disable it
     -- ["<esc>"] = false,
+  },
+  x = {
+    -- quickhl
+    ["<Space>m"] = { "<Plug>(quickhl-manual-this)" },
+    ["<Space>M"] = { "<Plug>(quickhl-manual-reset)" },
   },
 }
