@@ -20,8 +20,8 @@ return {
     ["<A-H>"] = { "<cmd>ToggleTerm size=10 direction=horizontal<cr>", desc = "Toggle horizontal terminal" },
     ["<A-V>"] = { "<cmd>ToggleTerm size=80 direction=vertical<cr>", desc = "Toggle vertical terminal" },
     -- quickhl
-    ["<Space>m"] = { "<Plug>(quickhl-manual-this)" },
-    ["<Space>M"] = { "<Plug>(quickhl-manual-reset)" },
+    ["<Space>m"] = { "<Plug>(quickhl-manual-this)", desc = "highlight word on" },
+    ["<Space>M"] = { "<Plug>(quickhl-manual-reset)", desc = "highlight word off" },
     -- second key is the lefthand side of the map
 
     -- navigate buffer tabs with `H` and `L`
