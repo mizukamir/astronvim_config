@@ -22,6 +22,14 @@ return {
     -- quickhl
     ["<Space>m"] = { "<Plug>(quickhl-manual-this)", desc = "highlight word on" },
     ["<Space>M"] = { "<Plug>(quickhl-manual-reset)", desc = "highlight word off" },
+    -- lspsaga
+    ["<C-g>g"] = { "<cmd>Lspsaga lsp_finder<cr>", desc = "lsp finder" },
+    ["<C-g>r"] = { "<cmd>Lspsaga rename<cr>", desc = "Rename" },
+    ["<C-g>a"] = { "<cmd>Lspsaga code_action<cr>", desc = "Code action" },
+    ["<C-g>p"] = { "<cmd>Lspsaga peek_definition<cr>", desc = "Peek definition" },
+    ["<C-g>d"] = { "<cmd>Lspsaga goto_definition<cr>", desc = "Goto definition" },
+    ["<C-g>o"] = { "<cmd>Lspsaga outline<cr>", desc = "File Outline" },
+    ["<C-g>n"] = { "<cmd>lua vim.diagnostic.goto_next()<cr>", desc = "Goto next diagnostic" },
     -- second key is the lefthand side of the map
 
     -- navigate buffer tabs with `H` and `L`
