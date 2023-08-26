@@ -54,7 +54,6 @@ return {
       code_action_lightbulb = {
         enable = true,
       },
-      -- ライトバルブをすべて無効
       lightbulb = {
         enable = false,
         enable_in_insert = false,
@@ -62,7 +61,9 @@ return {
         sign_priority = 40,
         virtual_text = false,
       },
-
+      definition = {
+        width = 1.0,
+      },
       diagnostic = {
         show_code_action = false,
         show_source = true,
@@ -76,3 +77,4 @@ return {
     }
   end,
 }
+-- TODO: todo test

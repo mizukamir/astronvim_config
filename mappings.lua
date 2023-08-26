@@ -4,6 +4,11 @@
 -- lower level configuration and more robust one. (which-key will
 -- automatically pick-up stored data by this setting.)
 return {
+  -- treesitter-unit
+  vim.api.nvim_set_keymap("x", "iu", ':lua require"treesitter-unit".select()<CR>', { noremap = true }),
+  vim.api.nvim_set_keymap("x", "au", ':lua require"treesitter-unit".select(true)<CR>', { noremap = true }),
+  vim.api.nvim_set_keymap("o", "iu", ':<c-u>lua require"treesitter-unit".select()<CR>', { noremap = true }),
+  vim.api.nvim_set_keymap("o", "au", ':<c-u>lua require"treesitter-unit".select(true)<CR>', { noremap = true }),
   -- first key is the mode
   n = {
     -- resize
@@ -20,8 +25,8 @@ return {
     ["<A-H>"] = { "<cmd>ToggleTerm size=10 direction=horizontal<cr>", desc = "Toggle horizontal terminal" },
     ["<A-V>"] = { "<cmd>ToggleTerm size=80 direction=vertical<cr>", desc = "Toggle vertical terminal" },
     -- quickhl
-    ["<Space>m"] = { "<Plug>(quickhl-manual-this)", desc = "highlight word on" },
-    ["<Space>M"] = { "<Plug>(quickhl-manual-reset)", desc = "highlight word off" },
+    ["<leader>m"] = { "<Plug>(quickhl-manual-this)", desc = "highlight word on" },
+    ["<leader>M"] = { "<Plug>(quickhl-manual-reset)", desc = "highlight word off" },
     -- lspsaga
     ["<C-g>g"] = { "<cmd>Lspsaga lsp_finder<cr>", desc = "lsp finder" },
     ["<C-g>r"] = { "<cmd>Lspsaga rename<cr>", desc = "Rename" },
@@ -30,6 +35,9 @@ return {
     ["<C-g>d"] = { "<cmd>Lspsaga goto_definition<cr>", desc = "Goto definition" },
     ["<C-g>o"] = { "<cmd>Lspsaga outline<cr>", desc = "File Outline" },
     ["<C-g>n"] = { "<cmd>lua vim.diagnostic.goto_next()<cr>", desc = "Goto next diagnostic" },
+    --sidebar
+    ["<leader>j"] = { "<cmd>lua require('sidebar-nvim').toggle()<cr>", desc = "Toggle sidebar" },
+
     -- second key is the lefthand side of the map
 
     -- navigate buffer tabs with `H` and `L`
@@ -62,7 +70,7 @@ return {
     ["<A-H>"] = { "<cmd>ToggleTerm size=10 direction=horizontal<cr>", desc = "toggle horizontal terminal" },
     ["<A-V>"] = { "<cmd>ToggleTerm size=80 direction=vertical<cr>", desc = "toggle vertical terminal" },
     -- setting a mapping to false will disable it
-    -- ["<esc>"] = false,
+    -- ["<esc>"] = false,kj
   },
   x = {
     -- quickhl
