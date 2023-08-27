@@ -1,10 +1,11 @@
 return {
   "petertriho/nvim-scrollbar",
-  event = "BufRead",
+  event = "BufReadPre",
   dependencies = {
     "kevinhwang91/nvim-hlslens",
   },
   config = function()
+    local colors = require("tokyonight.colors").setup()
     require("scrollbar").setup {
       show = true,
       show_in_active_only = false,
@@ -16,7 +17,7 @@ return {
       handle = {
         text = " ",
         blend = 30, -- Integer between 0 and 100. 0 for fully opaque and 100 to full transparent. Defaults to 30.
-        color = nil,
+        color = colors.blue0,
         color_nr = nil, -- cterm
         highlight = "CursorColumn",
         hide_if_all_visible = true, -- Hides handle if all lines are visible
@@ -35,7 +36,7 @@ return {
           text = { "-", "=" },
           priority = 1,
           gui = nil,
-          color = nil,
+          color = colors.orange,
           cterm = nil,
           color_nr = nil, -- cterm
           highlight = "Search",
@@ -44,7 +45,7 @@ return {
           text = { "-", "=" },
           priority = 2,
           gui = nil,
-          color = nil,
+          color = colors.error,
           cterm = nil,
           color_nr = nil, -- cterm
           highlight = "DiagnosticVirtualTextError",
@@ -53,7 +54,7 @@ return {
           text = { "-", "=" },
           priority = 3,
           gui = nil,
-          color = nil,
+          color = colors.warning,
           cterm = nil,
           color_nr = nil, -- cterm
           highlight = "DiagnosticVirtualTextWarn",
@@ -62,7 +63,7 @@ return {
           text = { "-", "=" },
           priority = 4,
           gui = nil,
-          color = nil,
+          color = colors.info,
           cterm = nil,
           color_nr = nil, -- cterm
           highlight = "DiagnosticVirtualTextInfo",
@@ -71,7 +72,7 @@ return {
           text = { "-", "=" },
           priority = 5,
           gui = nil,
-          color = nil,
+          color = colors.hint,
           cterm = nil,
           color_nr = nil, -- cterm
           highlight = "DiagnosticVirtualTextHint",
@@ -80,7 +81,7 @@ return {
           text = { "-", "=" },
           priority = 6,
           gui = nil,
-          color = nil,
+          color = colors.purple,
           cterm = nil,
           color_nr = nil, -- cterm
           highlight = "Normal",
@@ -146,7 +147,7 @@ return {
         diagnostic = true,
         gitsigns = false, -- Requires gitsigns
         handle = true,
-        search = false, -- Requires hlslens
+        search = true, -- Requires hlslens
         ale = false, -- Requires ALE
       },
     }

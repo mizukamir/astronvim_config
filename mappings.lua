@@ -9,6 +9,10 @@ return {
   vim.api.nvim_set_keymap("x", "au", ':lua require"treesitter-unit".select(true)<CR>', { noremap = true }),
   vim.api.nvim_set_keymap("o", "iu", ':<c-u>lua require"treesitter-unit".select()<CR>', { noremap = true }),
   vim.api.nvim_set_keymap("o", "au", ':<c-u>lua require"treesitter-unit".select(true)<CR>', { noremap = true }),
+  -- treehopper
+  vim.api.nvim_set_keymap("o", "m", ':<C-U>lua require("tsht").nodes()<CR>', { noremap = false }),
+  vim.api.nvim_set_keymap("x", "m", ':lua require("tsht").nodes()<CR>', { noremap = true }),
+
   -- first key is the mode
   n = {
     -- resize
@@ -37,6 +41,11 @@ return {
     ["<C-g>n"] = { "<cmd>lua vim.diagnostic.goto_next()<cr>", desc = "Goto next diagnostic" },
     --sidebar
     ["<leader>j"] = { "<cmd>lua require('sidebar-nvim').toggle()<cr>", desc = "Toggle sidebar" },
+    -- vim-asterisk
+    ["*"] = { "<Plug>(asterisk-z*)" },
+    ["#"] = { "<Plug>(asterisk-z#)" },
+    ["g*"] = { "<Plug>(asterisk-gz*)" },
+    ["g#"] = { "<Plug>(asterisk-gz#)" },
 
     -- second key is the lefthand side of the map
 
@@ -64,13 +73,6 @@ return {
     ["<leader>b"] = { name = "Buffers" },
     -- quick save
     -- ["<C-s>"] = { ":w!<cr>", desc = "Save File" },  -- change description but the same command
-  },
-  t = {
-    ["<A-i>"] = { "<cmd>ToggleTerm direction=float<cr>", desc = "toggle floating terminal" },
-    ["<A-H>"] = { "<cmd>ToggleTerm size=10 direction=horizontal<cr>", desc = "toggle horizontal terminal" },
-    ["<A-V>"] = { "<cmd>ToggleTerm size=80 direction=vertical<cr>", desc = "toggle vertical terminal" },
-    -- setting a mapping to false will disable it
-    -- ["<esc>"] = false,kj
   },
   x = {
     -- quickhl
