@@ -1,4 +1,4 @@
 return {
-  "tpope/vim-repeat",
+  "tyru/open-browser.vim",
   event = "BufRead",
 }

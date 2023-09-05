@@ -14,6 +14,7 @@ return {
   vim.api.nvim_set_keymap("x", "m", ':lua require("tsht").nodes()<CR>', { noremap = true }),
 
   -- first key is the mode
+  -- second key is the lefthand side of the map
   n = {
     -- resize
     ["<A-l>"] = { ":vertical resize +2<CR>" },
@@ -42,12 +43,16 @@ return {
     --sidebar
     ["<leader>j"] = { "<cmd>lua require('sidebar-nvim').toggle()<cr>", desc = "Toggle sidebar" },
     -- vim-asterisk
-    ["*"] = { "<Plug>(asterisk-z*)" },
-    ["#"] = { "<Plug>(asterisk-z#)" },
-    ["g*"] = { "<Plug>(asterisk-gz*)" },
-    ["g#"] = { "<Plug>(asterisk-gz#)" },
-
-    -- second key is the lefthand side of the map
+    ["*"] = { "<Plug>(asterisk-z*)", desc = "asterisk-z*" },
+    ["#"] = { "<Plug>(asterisk-z#)", desc = "asterisk-z#" },
+    ["g*"] = { "<Plug>(asterisk-gz*)", desc = "asterisk-gz*" },
+    ["g#"] = { "<Plug>(asterisk-gz#)", desc = "asterisk-gz#" },
+    -- rust-tools
+    ["<leader>z"] = { "<cmd>lua require('rust-tools').hover_actions.hover_actions()<cr>", desc = "rust-tools hover" },
+    ["<leader>a"] = {
+      "<cmd>lua require('rust-tools').code_action_group.code_action_group()<cr>",
+      desc = "rust-tools code action",
+    },
 
     -- navigate buffer tabs with `H` and `L`
     -- L = {

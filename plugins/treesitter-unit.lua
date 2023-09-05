@@ -1,4 +1,4 @@
 return {
   "David-Kunz/treesitter-unit",
-  event = "UIEnter", -- "LspAttach",
+  event = "BufRead", -- "LspAttach",
 }

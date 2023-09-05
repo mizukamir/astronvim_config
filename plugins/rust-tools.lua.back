@@ -1,0 +1,25 @@
+return {
+  "simrat39/rust-tools.nvim",
+  config = function()
+    require("rust-tools").setup {
+      server = {
+        on_attach = function(_, bufnr)
+          -- Hover actions
+          vim.api.nvim_set_keymap(
+            "n",
+            "<leader>r",
+            '<cmd>lua require"rust-tools".hover_actions.hover_actions()<CR>',
+            { buffer = bufnr }
+          )
+          -- Code action groups
+          vim.api.nvim_set_keymap(
+            "n",
+            "<Leader>a",
+            ':lua require"rust-tools".code_action_group.code_action_group()<CR>',
+            { buffer = bufnr }
+          )
+        end,
+      },
+    }
+  end,
+}
