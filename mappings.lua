@@ -43,10 +43,10 @@ return {
     --sidebar
     ["<leader>j"] = { "<cmd>lua require('sidebar-nvim').toggle()<cr>", desc = "Toggle sidebar" },
     -- vim-asterisk
-    ["*"] = { "<Plug>(asterisk-z*)", desc = "asterisk-z*" },
-    ["#"] = { "<Plug>(asterisk-z#)", desc = "asterisk-z#" },
-    ["g*"] = { "<Plug>(asterisk-gz*)", desc = "asterisk-gz*" },
-    ["g#"] = { "<Plug>(asterisk-gz#)", desc = "asterisk-gz#" },
+    -- ["*"] = { "<Plug>(asterisk-z*)", desc = "asterisk-z*" },
+    -- ["#"] = { "<Plug>(asterisk-z#)", desc = "asterisk-z#" },
+    -- ["g*"] = { "<Plug>(asterisk-gz*)", desc = "asterisk-gz*" },
+    -- ["g#"] = { "<Plug>(asterisk-gz#)", desc = "asterisk-gz#" },
     -- rust-tools
     ["<leader>z"] = { "<cmd>lua require('rust-tools').hover_actions.hover_actions()<cr>", desc = "rust-tools hover" },
     ["<leader>a"] = {
